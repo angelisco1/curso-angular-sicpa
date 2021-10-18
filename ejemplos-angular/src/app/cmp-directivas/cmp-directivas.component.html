@@ -1,0 +1,10 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<!-- <p [ngClass]="{fondoAzul: activarEstilos, letraBlanca: activarEstilos}">Un párrafo con el fondo azul y la letra blanca</p> -->
+<p [ngClass]="getClases()">Un párrafo con el fondo azul y la letra blanca</p>
+<p>Un párrafo con el fondo negro y la letra naranja</p>
+
+<button type="button" (click)="toggleClases()">Activar/desactivar clases</button>
+
+<h3>Estructurales</h3>

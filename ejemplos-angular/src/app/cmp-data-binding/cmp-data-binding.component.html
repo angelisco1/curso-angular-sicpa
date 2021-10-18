@@ -1,0 +1,33 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p>Me llamo {{nombre}}</p>
+<!-- <p>Me llamo {{getNombre()}}</p> -->
+<p>Me llamo {{nombre ? nombre : 'mundo'}}</p>
+
+<h3>Property Binding</h3>
+<input type="text" [value]="nombre" [disabled]="inputDeshabilitado">
+<!-- <input type="text" value="{{nombre}}"> -->
+<!-- <img src="" alt="Imagen de {{nombre}}">
+<img src="" [alt]="alt">
+<img src="" [alt]="getAlt()"> -->
+
+<h3>Event Binding</h3>
+<button type="button" (click)="resetNombre($event, 1)">Resetear nombre</button>
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+
+<h3>Mi propio 2Way Binding</h3>
+<input type="text" (input)="cambiarNombre($event)" [value]="nombre">
+<!-- <input type="text" (input)="cambiarNombre2(input1.value)" [value]="nombre" #input1> -->
+
+<h3>Referencias</h3>
+<input type="text" [value]="nombre" #input>
+<button type="button" (click)="cambiarNombre2(input.value)">Cambiar nombre</button>
+
+<!-- <video src=""></video>
+<button>Play</button>
+<button>Pausar</button>
+play()
+pause() -->

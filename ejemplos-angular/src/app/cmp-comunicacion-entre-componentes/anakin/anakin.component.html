@@ -1,0 +1,13 @@
+<h3>Anakin</h3>
+
+<app-luke
+  [nombre]="nombreLuke"
+  [nombreLeia]="nombreLeia"
+  ></app-luke>
+
+<app-leia
+  [nombre]="nombreLeia"
+  (nombreCambiado)="actualizarNombre($event)"
+  ></app-leia>
+
+<!-- <input type="number" (input)="fn()"> -->
