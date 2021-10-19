@@ -13,6 +13,10 @@ interface IClasesEstilos {
 })
 export class CmpDirectivasComponent implements OnInit {
   activarEstilos: boolean = true;
+  colorLetra: string = 'orange'
+
+  darkMode: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +24,10 @@ export class CmpDirectivasComponent implements OnInit {
 
   toggleClases() {
     this.activarEstilos = !this.activarEstilos;
+  }
+
+  toggleDarkMode(activar: boolean) {
+    this.darkMode = activar
   }
 
   // getClases(): {fondoAzul: boolean, letraBlanca: boolean} {

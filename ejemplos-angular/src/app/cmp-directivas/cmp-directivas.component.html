@@ -3,8 +3,33 @@
 <h3>De atributo</h3>
 <!-- <p [ngClass]="{fondoAzul: activarEstilos, letraBlanca: activarEstilos}">Un párrafo con el fondo azul y la letra blanca</p> -->
 <p [ngClass]="getClases()">Un párrafo con el fondo azul y la letra blanca</p>
-<p>Un párrafo con el fondo negro y la letra naranja</p>
-
 <button type="button" (click)="toggleClases()">Activar/desactivar clases</button>
 
+<p [ngStyle]="{backgroundColor: 'black', color: colorLetra}">Un párrafo con el fondo negro y la letra naranja</p>
+<input type="color" [(ngModel)]="colorLetra">
+
 <h3>Estructurales</h3>
+
+<!-- <button type="button" *ngIf="darkMode" (click)="toggleDarkMode(false)">Activar Light mode ☀️</button>
+<button type="button" *ngIf="!darkMode" (click)="toggleDarkMode(true)">Activar Dark mode 🌜</button> -->
+
+<!--
+<button type="button" *ngIf="darkMode; else elseDarkMode" (click)="toggleDarkMode(false)">Activar Light mode ☀️</button>
+
+<ng-template #elseDarkMode>
+  <button type="button" (click)="toggleDarkMode(true)">Activar Dark mode 🌜</button>
+</ng-template> -->
+
+<ng-container *ngIf="darkMode; then ifDarkMode else elseDarkMode"></ng-container>
+
+<ng-template #ifDarkMode>
+  <button type="button" (click)="toggleDarkMode(false)">Activar Light mode ☀️</button>
+</ng-template>
+<ng-template #elseDarkMode>
+  <button type="button" (click)="toggleDarkMode(true)">Activar Dark mode 🌜</button>
+</ng-template>
+
+<ng-container *ngIf="darkMode">
+  <p>El darkMode está a {{darkMode}}</p>
+  <input type="text" value="input">
+</ng-container>
