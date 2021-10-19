@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ISugus } from '../../interfaces/interfaces'
 
 @Component({
   selector: 'app-sugus',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SugusComponent implements OnInit {
   @Input() sabor: string = 'limón';
   @Input() color: string = 'yellow';
+  // @Input() sugus: ISugus = {color: '', sabor: ''}
 
   constructor() { }
 

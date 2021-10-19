@@ -11,6 +11,10 @@ import { AnakinComponent } from './cmp-comunicacion-entre-componentes/anakin/ana
 import { LeiaComponent } from './cmp-comunicacion-entre-componentes/leia/leia.component';
 import { LukeComponent } from './cmp-comunicacion-entre-componentes/luke/luke.component';
 import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
+import { MarcarDirective } from './cmp-directivas/marcar.directive';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { DoblePipe } from './cmp-pipes/doble.pipe';
+import { FiltroPipe } from './cmp-pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.componen
     AnakinComponent,
     LeiaComponent,
     LukeComponent,
-    CmpDirectivasComponent
+    CmpDirectivasComponent,
+    MarcarDirective,
+    CmpPipesComponent,
+    DoblePipe,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+<h2>Pipes</h2>
+
+<div>
+  <h4>{{producto.nombre}}</h4>
+  <p>Descripción: {{producto.descripcion}}</p>
+  <div>
+    <span>Precio: {{producto.precio}}</span>
+    <span>Fecha de salida: {{producto.fechaSalida}}</span>
+  </div>
+</div>
+
+<div>
+  <h4>{{producto.nombre | titlecase}}</h4>
+  <p>Descripción: {{producto.descripcion | slice:0:20}}...</p>
+  <div>
+    <span>Precio: {{producto.precio | doble:{suma:2} | currency:'EUR'}}</span>
+    <span>Precio: {{producto.precio | doble:{resta:2} | currency:'EUR'}}</span>
+    <span>Precio: {{producto.precio | doble:{resta:1, suma:2} | currency:'EUR'}}</span>
+    <span>Fecha de salida: {{producto.fechaSalida | date:'dd/MM/yyyy'}}</span>
+  </div>
+</div>
+
+<div>
+  <pre>{{producto | json}}</pre>
+</div>
+
+
+<hr>
+<input type="text" (change)="addProducto($event)">
+
+<ul>
+  <li *ngFor="let prod of productos">
+    {{prod.nombre | titlecase}}
+  </li>
+</ul>
+
+<hr>
+<input type="text" [(ngModel)]="filtroTxt">
+
+<ul>
+  <li *ngFor="let prod of productos | filtro:filtroTxt">
+    {{prod.nombre | titlecase}}
+  </li>
+</ul>
+
+<p>{{mensaje | async}}</p>
+<pre>{{usuario1 | async | json}}</pre>
+<pre>{{datosUsuario | json}}</pre>

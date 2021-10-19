@@ -17,6 +17,9 @@ export class CmpDirectivasComponent implements OnInit {
 
   darkMode: boolean = true;
 
+  mascotas: string[] = ['canario', 'perro', 'gato']
+  colores: Array<string> = ['orange', 'black', 'yellow']
+
   constructor() { }
 
   ngOnInit(): void {

@@ -33,3 +33,30 @@
   <p>El darkMode está a {{darkMode}}</p>
   <input type="text" value="input">
 </ng-container>
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let pos = index; let esUltimo = last; let esPrimero = first">
+    <!-- even, odd -->
+    <hr *ngIf="esPrimero">
+    {{pos+1}}: {{mascota}}
+    <hr *ngIf="esUltimo">
+  </li>
+</ul>
+
+<ng-container [ngSwitch]="colorLetra">
+  <ng-container *ngFor="let color of colores">
+    <p *ngSwitchCase="color">La letra es {{color}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="'orange'">La letra es naranja</p>
+  <p *ngSwitchCase="'black'">La letra es negra</p>
+  <p *ngSwitchCase="'yellow'">La letra es amarilla</p> -->
+  <p *ngSwitchDefault>La letra es de otro color</p>
+</ng-container>
+
+<input type="text" [(ngModel)]="colorLetra">
+
+<h3>Directiva personalizada</h3>
+<p appMarcar>Este párrafo se ha marcado</p>
+<p appMarcar="blue">Este párrafo se ha marcado</p>
+<p appMarcar="red">Este párrafo se ha marcado</p>
+<p appMarcar="green">Este párrafo se ha marcado</p>

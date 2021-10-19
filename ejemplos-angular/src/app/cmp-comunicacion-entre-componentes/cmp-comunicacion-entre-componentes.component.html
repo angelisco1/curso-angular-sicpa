@@ -1,6 +1,19 @@
 <h2>Comunicación entre componentes</h2>
-<app-sugus sabor="limon" color="yellow"></app-sugus>
+<!-- <app-sugus sabor="limon" color="yellow"></app-sugus> -->
 <!-- <app-sugus sabor="naranja" color="orange"></app-sugus>
 <app-sugus sabor="piña" color="blue"></app-sugus>
 <app-sugus></app-sugus> -->
+<!--
+<app-sugus
+  [sugus]="{color: '', sabor: ''}"
+  ></app-sugus> -->
+
+<app-sugus
+  *ngFor="let s of sugus"
+  [sabor]="s.sabor"
+  [color]="s.color"></app-sugus>
+<!-- <app-sugus
+  *ngFor="let s of sugus"
+  [sugus]="s"></app-sugus> -->
+
 <app-anakin></app-anakin>
