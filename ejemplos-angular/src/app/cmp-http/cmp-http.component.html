@@ -1,0 +1,16 @@
+<h2>Http</h2>
+
+<div>
+  <label for="titulo">Titulo tarea:</label>
+  <input type="text" (change)="save($event)">
+</div>
+
+<hr>
+
+<div *ngFor="let tarea of tareas">
+  <p>{{tarea.titulo}} ({{tarea.completada ? 'completada' : 'no completada'}})</p>
+
+  <button type="button" (click)="update(tarea)">Completar/No completar</button>
+
+  <button type="button">Eliminar</button>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MiComponenteComponent } from './mi-componente/mi-componente.component';
@@ -15,6 +16,12 @@ import { MarcarDirective } from './cmp-directivas/marcar.directive';
 import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 import { DoblePipe } from './cmp-pipes/doble.pipe';
 import { FiltroPipe } from './cmp-pipes/filtro.pipe';
+import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
+import { CmpAComponent } from './cmp-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
+import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +37,18 @@ import { FiltroPipe } from './cmp-pipes/filtro.pipe';
     MarcarDirective,
     CmpPipesComponent,
     DoblePipe,
-    FiltroPipe
+    FiltroPipe,
+    CmpServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    CmpHttpComponent,
+    CmpObservablesComponent,
+    UnsubscribeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

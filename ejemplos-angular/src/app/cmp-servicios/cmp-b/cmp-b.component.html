@@ -1,0 +1,11 @@
+<h3>Cmp B</h3>
+
+<input type="text" (change)="addMsg($event)">
+
+<ul>
+  <li *ngFor="let mensaje of mensajes">{{mensaje}}</li>
+</ul>
+
+<!-- <p>Mensaje de A: {{datosService.mensajeParaB | async}}</p> -->
+
+<p>Mensaje de A: {{mensajeDeA}}</p>

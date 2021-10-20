@@ -1,0 +1,9 @@
+<h3>Cmp A</h3>
+
+<input type="text" (change)="addMsg($event)">
+
+<ul>
+  <li *ngFor="let mensaje of mensajes">{{mensaje}}</li>
+</ul>
+
+<input type="text" (change)="enviarMsg($event)">
