@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { MiComponenteComponent } from './mi-componente/mi-componente.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CmpComunicacionEntreComponentesComponent } from './cmp-comunicacion-entre-componentes/cmp-comunicacion-entre-componentes.component';
 import { SugusComponent } from './cmp-comunicacion-entre-componentes/sugus/sugus.component';
 import { AnakinComponent } from './cmp-comunicacion-entre-componentes/anakin/anakin.component';
@@ -29,6 +29,8 @@ import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
 import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
 import { RoutingModule } from './cmp-routing/app.routes';
 import { Error404Component } from './cmp-routing/error404/error404.component';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ErrorComponent } from './cmp-formularios/error/error.component';
 
 @NgModule({
   declarations: [
@@ -55,13 +57,16 @@ import { Error404Component } from './cmp-routing/error404/error404.component';
     NuevoUsuarioComponent,
     UsuariosComponent,
     InfoUsuarioComponent,
-    Error404Component
+    Error404Component,
+    CmpFormulariosComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

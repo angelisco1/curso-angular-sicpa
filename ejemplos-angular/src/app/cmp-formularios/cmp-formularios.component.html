@@ -1,0 +1,23 @@
+<h2>Formularios</h2>
+
+<form [formGroup]="formulario" (ngSubmit)="registrate()">
+  <div>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" formControlName="usuario">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email">
+  </div>
+  <div>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" formControlName="password">
+
+    <app-error
+      *ngIf="formulario.controls.password.invalid && formulario.controls.password.touched"
+      [errors]="formulario.controls.password.errors"></app-error>
+
+  </div>
+  <button type="submit" [disabled]="formulario.invalid">Registrate</button>
+  <button type="submit">Registrate</button>
+</form>
