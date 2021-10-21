@@ -49,4 +49,8 @@ export class DatosService {
   crearTarea(tarea: any): Observable<ITareaId> {
     return this.http.post<ITareaId>(this.URL + '.json', tarea)
   }
+
+  eliminarTarea(id: string): Observable<null> {
+    return this.http.delete<null>(`${this.URL}/${id}.json`);
+  }
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MiComponenteComponent } from './mi-componente/mi-componente.component';
@@ -22,6 +22,13 @@ import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
+import { AuthInterceptor } from './cmp-http/auth.interceptor';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { RoutingModule } from './cmp-routing/app.routes';
+import { Error404Component } from './cmp-routing/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +50,24 @@ import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.
     CmpBComponent,
     CmpHttpComponent,
     CmpObservablesComponent,
-    UnsubscribeComponent
+    UnsubscribeComponent,
+    CmpRoutingComponent,
+    NuevoUsuarioComponent,
+    UsuariosComponent,
+    InfoUsuarioComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: LogInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

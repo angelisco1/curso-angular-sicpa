@@ -50,4 +50,13 @@ export class CmpHttpComponent implements OnInit {
       })
   }
 
+  eliminar(id: string) {
+    this.datosService.eliminarTarea(id)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert('Tarea eliminada')
+        this.tareas = this.tareas.filter((t: ITarea) => t.id !== id)
+      })
+  }
+
 }
